@@ -7,6 +7,7 @@ public class EntradaSaida {
 	public static void main (String args[]) {
 		
 		Scanner ler = new Scanner(System.in);
+		
 		int a,b,soma;
 		System.out.print("Entre com o valor de A: ");
 		a = ler.nextInt();
