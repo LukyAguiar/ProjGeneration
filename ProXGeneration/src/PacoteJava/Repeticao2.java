@@ -18,13 +18,13 @@ public class Repeticao2 {
 			System.out.printf("Sua Idade é %d ",idade);
 			if(idade>=18) 
 			{
-				System.out.println(" Você é de maior...");
+				System.out.println("\nVocê é de maior...");
 			}
 			else
 			{
-				System.out.println("Você é de menor...");
+				System.out.println("\n Você é de menor...");
 			}
-			System.out.println("Entre com suia idade: ");
+			System.out.println("\n Entre com suia idade: ");
 			idade = entrada.nextInt();
 		}
 	}
