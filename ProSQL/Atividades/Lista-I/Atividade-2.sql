@@ -8,7 +8,7 @@ create database e_commerce;
 
 create table tb_produto(
 
-	id_Produto bigint(5) auto_increment primary key,
+	id_Produto bigint(5) auto_increment not null primary key,
 	nomeProduto varchar(40),
     qtdProduto int,
 	valorProduto double,

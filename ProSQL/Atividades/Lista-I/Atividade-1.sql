@@ -4,13 +4,12 @@ Create Database RH;
 
 /*2 - Crie um banco de dados para um serviço de RH de uma empresa, onde o sistema trabalhará com as informações dos funcionaries desta empresa. */
 Create Table tb_Funcionario(
-	id_func bigint(5) auto_increment not null,
+	id_func bigint(5) auto_increment not null primary key,
     tercerizado boolean,
     nome varchar(50),
     cpf bigint(20),
     telefone varchar(15),
-    salario int,
-    primary key(id_func)
+    salario int
 );
 
 /*3 - Teste mostrando Tabela*/
