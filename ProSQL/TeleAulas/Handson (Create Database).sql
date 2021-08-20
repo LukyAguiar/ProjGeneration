@@ -1,7 +1,12 @@
- /*create Database = (Criando Banco de dados) | Drop Database = (Exclui um) */
+
+
+
+/*create Database = (Criando Banco de dados) | Drop Database = (Exclui um) */
+
+use db_estoque;
 
 Create table tb_marcas(
-id Bigint(5) auto_increment,
+id Bigint(5) auto_increment, -- Bigint(5) equivale até 5 Caracteres (exemplo: 99999)
 nome varchar(20) not null,
 ativo boolean,
 primary key(id)
@@ -32,4 +37,34 @@ Select ativo from tb_marcas; /*Especificando a Coluna Ativo */
 Select nome, ativo from tb_marcas; /*Especificando duas Colunas |Ativo|Nome| */
 
 /*Deletando um item na coluna*/
-delete from tb_marcas where id = 1;
+delete from tb_marcas where id = 3;
+
+/*Like*/
+Select * from tb_marcas where nome like "%Fa%";
+Select * from tb_marcas where ativo = true;
+
+/*Criando Tabelas Produtos*/
+create table tb_produtos(
+
+	id_produto bigint auto_increment not null primary key, 
+    nomeProduto varchar(30) not null,
+    precoProduto decimal(10,2) not null, -- (10,2)    10 = Antes da virgula pode ter 10 digitos --- 2 = Depois da virgula pode vir apenas 2 digitos
+	marca_id bigint not null,
+    
+    -- Colocando Chave Estrangeira na tabela Produtos
+    foreign key (marca_id) references tb_marcas(id)
+);
+
+/*Inserindo informações na tabela produtos e ligando a FK marca_id ao id da Tabela Marca*/
+insert into tb_produtos(nomeProduto,precoProduto,marca_id)
+	VALUES ("Camisa Lacoste",80.90,2);
+    
+insert into tb_produtos(nomeProduto,precoProduto,marca_id)
+	VALUES ("Camisa Tommy",50.00, 4);
+
+/*Buscando com LIKE*/
+Select * from tb_produtos where nomeProduto like "%La%"; -- Utilizando La
+/*Buscando com Condicional = */
+Select * from tb_produtos where nomeProduto = "Camisa Lacoste"; -- Nome completo do item no nomeProduto = "Camisa Lacoste", para encontrar o item
+/*Buscando PrecoProduto com Condicional = */
+Select * from tb_produtos where precoProduto = "80.90";
