@@ -22,7 +22,7 @@ public class ProgramaPolimorfismo {
 			System.out.println(pessoa.getNome());
 		}
 		
-		
+		//Polimorfismo é o uso de um mesmo nome para identificar diferentes implementações dos métodos
 		
 	}
 
