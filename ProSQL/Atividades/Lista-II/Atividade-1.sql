@@ -67,8 +67,6 @@ select nomePersonagem,danoDeAtaque from tb_personagem where danoDeAtaque > 2000;
 Faça um select trazendo  os personagens com poder de defesa entre 1000 e 2000.*/
 select nomePersonagem,resDefesa from tb_personagem where resDefesa >= 1000 && resDefesa <= 2000;
 
-select * from tb_personagem,tb_classe;
-
 /*Faça um um select com Inner join entre  tabela classe e personagem.*/
 Select tb_personagem.nomePersonagem, tb_Personagem.habUltimate, tb_classe.nomeClasse from tb_personagem
 inner join tb_classe on tb_classe.id_classe;
