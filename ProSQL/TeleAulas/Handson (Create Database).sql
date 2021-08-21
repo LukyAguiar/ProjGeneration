@@ -1,6 +1,5 @@
-
-
-
+create database "Nome do Banco";
+drop database db_estoque;
 /*create Database = (Criando Banco de dados) | Drop Database = (Exclui um) */
 
 use db_estoque;
@@ -57,14 +56,46 @@ create table tb_produtos(
 
 /*Inserindo informações na tabela produtos e ligando a FK marca_id ao id da Tabela Marca*/
 insert into tb_produtos(nomeProduto,precoProduto,marca_id)
-	VALUES ("Camisa Lacoste",80.90,2);
+	VALUES ("Camisa Lacoste",80.90,1);
     
 insert into tb_produtos(nomeProduto,precoProduto,marca_id)
 	VALUES ("Camisa Tommy",50.00, 4);
 
 /*Buscando com LIKE*/
 Select * from tb_produtos where nomeProduto like "%La%"; -- Utilizando La
+
 /*Buscando com Condicional = */
 Select * from tb_produtos where nomeProduto = "Camisa Lacoste"; -- Nome completo do item no nomeProduto = "Camisa Lacoste", para encontrar o item
+
 /*Buscando PrecoProduto com Condicional = */
 Select * from tb_produtos where precoProduto = "80.90";
+
+/*Dando um Inner join da Tabela Produtos com a Tabela Marcas*/
+Select * From tb_produtos
+	inner join tb_marcas on tb_marcas.id = tb_produtos.marca_id;
+
+/*Dando um inner join mais especifico*/
+Select tb_produtos.nomeProduto, tb_produtos.precoProduto, tb_marcas.nome 
+	from tb_produtos
+inner join tb_marcas on tb_marcas.id = tb_produtos.marca_id
+where tb_marcas.nome LIKE "%Gucci%"
+AND tb_produtos.precoProduto < 50.00
+AND tb_produtos.nomeProduto = "Meias"; -- Gucci
+
+/*Dando outro inner join*/
+Select tb_produtos.nomeProduto, tb_produtos.precoProduto, tb_marcas.nome 
+	from tb_produtos
+inner join tb_marcas on tb_marcas.id = tb_produtos.marca_id
+where tb_produtos.nomeProduto = "Meias"
+OR tb_produtos.nomeProduto = "Tênis";
+
+/*Dando um right join*/
+Select tb_produtos.nomeProduto, tb_produtos.precoProduto, tb_marcas.nome 
+	from tb_produtos
+left join tb_marcas on tb_marcas.id = tb_produtos.marca_id;
+/**/
+select * from tb_produtos
+left join tb_marcas on tb_marcas.id = tb_produtos.marca_id;
+/**/
+select * from tb_produtos
+right join tb_marcas on tb_marcas.id = tb_produtos.marca_id;

@@ -33,7 +33,7 @@ create table tb_personagem(
     danoDeAtaque int not null, 
 	resDefesa int not null,
     
-       -- Criando a FK com a Tabela Classe
+	-- Criando a FK com a Tabela Classe
 	id_ClassePersonagem bigint not null,
 	foreign key (id_ClassePersonagem) references tb_classe(id_classe)
 );
@@ -66,3 +66,12 @@ select nomePersonagem,danoDeAtaque from tb_personagem where danoDeAtaque > 2000;
 /*
 Faça um select trazendo  os personagens com poder de defesa entre 1000 e 2000.*/
 select nomePersonagem,resDefesa from tb_personagem where resDefesa >= 1000 && resDefesa <= 2000;
+
+select * from tb_personagem,tb_classe;
+
+/*Faça um um select com Inner join entre  tabela classe e personagem.*/
+Select tb_personagem.nomePersonagem, tb_Personagem.habUltimate, tb_classe.nomeClasse from tb_personagem
+inner join tb_classe on tb_classe.id_classe;
+
+/*Faça um select onde traga todos os personagem de uma classe específica (exemplo todos os personagens que são arqueiros).*/
+select nomePersonagem,nomeClasse from tb_personagem,tb_classe where nomeClasse like "%ASSA%"; 
