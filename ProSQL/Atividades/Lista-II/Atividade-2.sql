@@ -62,5 +62,3 @@ Select * from tb_pizza inner join tb_categoria on tb_pizza.id_CategoriaPizza = t
 /*Faça um select onde traga todos os Produtos de uma categoria específica (exemplo todos os produtos que são pizza doce).*/
 
 Select * from tb_pizza inner join tb_categoria on tb_pizza.id_CategoriaPizza = tb_categoria.id_categoria where tb_pizza.id_CategoriaPizza = 3;
-
-select * from tb_categoria,tb_pizza;
