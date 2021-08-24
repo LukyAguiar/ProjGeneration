@@ -50,7 +50,7 @@ Select * from tb_produto
 
 /*Faça um select trazendo  os Produtos com valor entre 3 e 60 reais.*/
 Select * from tb_produto 
-    Where valor between 3 AND 60;
+    Where valor between 3 and 60;
 
 /*Faça um select  utilizando LIKE buscando os Produtos com a letra C.*/
 Select * from tb_produto 
