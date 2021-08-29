@@ -35,8 +35,6 @@ public class Postagem {
 	private Date data = new java.sql.Date(System.currentTimeMillis()); // java.sql captura a data exata do momento em que os dados foram inseridos
 	
 	
-	
-	
 	//Getters and Setters 
 	public long getId() {
 		return id;
