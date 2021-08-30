@@ -26,13 +26,13 @@ public class Tema {
 	
 	@NotNull
 	private String descricao;
-	//Getter and Setters
-									//
+
+									
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem; 
 	
-
+	//Getter and Setters
 	public long getId() {
 		return id;
 	}

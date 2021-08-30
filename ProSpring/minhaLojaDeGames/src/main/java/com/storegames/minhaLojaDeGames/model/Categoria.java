@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -19,14 +20,8 @@ public class Categoria {
 	private long id;
 	
 	@NotBlank
-	@Size(min = 5, max = 100)
+	@Size(min = 1, max = 100)
 	private String genero;
-	
-	@NotBlank
-	private boolean dimensao2D;
-	
-	@NotBlank
-	private boolean dimensao3D;
 	
 	// Fim da Declaração de Variaveis
 	
@@ -48,21 +43,6 @@ public class Categoria {
 		this.genero = genero;
 	}
 
-	public boolean isDimensao2D() {
-		return dimensao2D;
-	}
-
-	public void setDimensao2D(boolean dimensao2d) {
-		dimensao2D = dimensao2d;
-	}
-
-	public boolean isDimensao3D() {
-		return dimensao3D;
-	}
-
-	public void setDimensao3D(boolean dimensao3d) {
-		dimensao3D = dimensao3d;
-	}
 	
 	
 
