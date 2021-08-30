@@ -43,11 +43,4 @@ public class Categoria {
 		this.genero = genero;
 	}
 
-	
-	
-
-	
-	
-	
-	
 }
