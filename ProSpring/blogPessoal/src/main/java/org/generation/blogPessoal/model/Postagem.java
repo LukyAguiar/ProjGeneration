@@ -8,7 +8,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.persistence.Id; 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -34,6 +38,9 @@ public class Postagem {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data = new java.sql.Date(System.currentTimeMillis()); // java.sql captura a data exata do momento em que os dados foram inseridos
 	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Tema tema;
 	
 	//Getters and Setters 
 	public long getId() {
