@@ -22,7 +22,7 @@ import com.storegames.minhaLojaDeGames.model.Categoria;
 @RestController
 @RequestMapping("/categorias")
 
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CategoriaController {
 	
 	@Autowired
