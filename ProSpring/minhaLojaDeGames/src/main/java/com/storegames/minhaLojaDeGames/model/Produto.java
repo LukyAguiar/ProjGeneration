@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -32,11 +33,11 @@ public class Produto {
 	@Size(min = 5, max = 100)
 	private String descricao;
 	
-	@NotBlank
+	@NotNull
 	private double valor;
 	
-	@NotBlank 
-	private Double qtdEstoque = 0.00;
+	@NotNull
+	private int qtdEstoque;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data = new java.sql.Date(System.currentTimeMillis());
@@ -77,11 +78,11 @@ public class Produto {
 		this.valor = valor;
 	}
 
-	public double getQtdEstoque() {
+	public int getQtdEstoque() {
 		return qtdEstoque;
 	}
 
-	public void setQtdEstoque(double qtdEstoque) {
+	public void setQtdEstoque(int qtdEstoque) {
 		this.qtdEstoque = qtdEstoque;
 	}
 
