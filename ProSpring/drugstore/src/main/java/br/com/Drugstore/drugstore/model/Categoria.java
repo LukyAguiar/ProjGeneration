@@ -1,19 +1,24 @@
 package br.com.Drugstore.drugstore.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_categoria")
 public class Categoria {
 
 	//Declarando Colunas da Tabela
-	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,8 +32,12 @@ public class Categoria {
 	@Size(min = 5, max = 150)
 	private String descricao;
 	
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("categoria")
+	private List<Produto> produto;
+	
+	
 	//Getter and Setters 
-
 	public long getId() {
 		return id;
 	}
