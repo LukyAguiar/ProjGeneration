@@ -18,7 +18,7 @@ import javax.persistence.GenerationType;
 
 
 @Entity // Essa Anotação ela indica que essa classe será uma entidade do JPA 
-@Table(name = "postagem") // Essa Anotação ela indica que essa entidade dentro do banco de dados ira ser tornar uma TABELA
+@Table(name = "tb_postagem") // Essa Anotação ela indica que essa entidade dentro do banco de dados ira ser tornar uma TABELA
 public class Postagem {
 	
 	//Declarando Váriaveis 
