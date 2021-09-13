@@ -63,6 +63,12 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId> <!-- Serve para fazer a conexão entre a API e o MYSQL -->
+			<version>1.10</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

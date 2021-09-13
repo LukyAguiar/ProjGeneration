@@ -26,6 +26,8 @@ public class UserDetailsImpl implements UserDetails{
 	//
 	public UserDetailsImpl() {}
 	
+    //-Substituição
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities(){
 		return null;
@@ -48,19 +50,19 @@ public class UserDetailsImpl implements UserDetails{
 	
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
+	
 		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
+	
 		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
+	
 		return true;
 	}
 }
