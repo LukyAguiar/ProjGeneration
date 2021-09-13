@@ -1,30 +1,65 @@
 package org.generation.blogPessoal.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
-@Entity
-@Table(name = "tb_usuario")
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.Set;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+
+
+				//Randomiza a porta
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class UsuarioTest {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	public Usuario usuario;
+	public Usuario usuarioNulo = new Usuario();
 	
-	@NotNull(message = "O atributo nome é obrigatório")
-	@Size(min = 5, max = 100, 
-	message = "O atributo nome deve ter no mínimo 05 e no máximo 100 caracteres")
-	private String nome; 
+	//Verificar as anotações que eu inseri dentro do usario model
+	@Autowired
+	private ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+	
+	//
+	Validator validator = factory.getValidator(); 
 	
 	
-	@NotNull(message = "O atributo usuário é obrigatório")
-	@NotNull(message = "O atributo não pode ser vazio")
-	@Email(message = "O atributo usuário deve ser um email")
-	private String usuario;
+	@BeforeEach
+	public void start() {
+		
+		usuario = new Usuario(0L,"Lucas Aguiar", "Lucas.Nunes2500@hotmail.com", "159753");		
+	}
+	
+	@Test
+	@DisplayName("✔ Valida Atributos Não Nulos")
+	void testValidaAtributos() {
+		
+		Set<ConstraintViolation<Usuario>> violacao = validator.validate(usuario);
+
+		System.out.println(violacao.toString());
+
+		assertTrue(violacao.isEmpty());
+	}
+
+	@Test
+	@DisplayName("✖ Não Valida Atributos Nulos")
+	void testNaoValidaAtributos() {
+		
+		Set<ConstraintViolation<Usuario>> violacao = validator.validate(usuarioNulo);
+
+		System.out.println(violacao.toString());
+
+		assertFalse(violacao.isEmpty());
+	}
 }
