@@ -19,6 +19,7 @@ public class UsuarioService {
 	private UsuarioRepository repository;
 
 	public Optional<Usuario> cadastrar(Usuario usuario) {
+		
 		Optional<Usuario> user = repository.findByUsuario(usuario.getUsuario());
 		if (user.isPresent()) {
 			return Optional.ofNullable(null);

@@ -119,6 +119,7 @@ public class Produto {
 		this.data = data;
 	}
 
+	//FK
 	public Categoria getCategoria() {
 		return categoria;
 	}

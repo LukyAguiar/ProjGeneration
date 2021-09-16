@@ -1,4 +1,4 @@
-package com.storegames.minhaLojaDeGames.model;
+package org.generation.blogPessoal.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "tb_usuario")
@@ -17,20 +18,29 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull
+	@NotNull(message = "O Nome é Obrigatório")
 	@Size(min = 2, max = 100)
 	private String nome;
 	
-	@NotNull
+	@NotNull(message = "O Usuario é Obrigatório")
 	@Size(min = 5, max = 100)
 	private String usuario;
 	
-	@NotNull
+	@NotNull(message = "A Senha deve ter no mínimo 8 caracteres")
 	@Size(min = 5, max = 100)
 	private String senha;
-
-	//Getters And Setters
 	
+	
+	public Usuario(long id, String nome, String usuario,String senha) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
+	
+	public Usuario() {}
+
+	//Getters and Setters
 	public long getId() {
 		return id;
 	}
@@ -61,9 +71,6 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-	
-	
-	
+	} 
 	
 }

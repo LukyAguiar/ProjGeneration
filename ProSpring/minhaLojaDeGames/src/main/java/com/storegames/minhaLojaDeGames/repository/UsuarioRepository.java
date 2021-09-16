@@ -8,6 +8,7 @@ import com.storegames.minhaLojaDeGames.model.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 
-							//nome reservado
+						//nome reservado
 	public Optional<Usuario> findByUsuario(String usuario);
+	
 }

@@ -1,4 +1,4 @@
-package com.storegames.minhaLojaDeGames.model;
+package br.com.Drugstore.drugstore.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,11 +8,11 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@Entity
+@Entity 
 @Table(name = "tb_usuario")
 public class Usuario {
 
-	//Atributos da nossa Tabela Usuario
+	//Colunas da tabela Usuario
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -26,11 +26,11 @@ public class Usuario {
 	private String usuario;
 	
 	@NotNull
-	@Size(min = 5, max = 100)
+	@Size(min = 8, max = 100)
 	private String senha;
 
-	//Getters And Setters
 	
+	//Getter and Setters
 	public long getId() {
 		return id;
 	}
@@ -62,7 +62,6 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
 	
 	
 	

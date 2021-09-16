@@ -26,7 +26,6 @@ public class UsuarioService {
 	
 	public Optional <Usuario> CadastrarUsuario (Usuario usuario) {
 			Optional <Usuario> user = repository.findByUsuario (usuario.getUsuario());
-			
 		if (user.isPresent()) {
 			return Optional.ofNullable(null);
 		}
@@ -58,15 +57,12 @@ public class UsuarioService {
 		
 		if (usuario.isPresent()) {
 			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
-				
 				String auth = user.get().getUsuario() + ":" + user.get().getSenha();
 				byte [] encodeAuth = Base64.encodeBase64 (auth.getBytes(Charset.forName("US-ASCII")));
+			
 				String authHeader = "Basic " + new String (encodeAuth);
-				
 				user.get().setToken(authHeader);
 				user.get().setNome(usuario.get().getNome());
-				user.get().setSenha(usuario.get().getSenha());
-				
 				return user;
 			}
 		}
