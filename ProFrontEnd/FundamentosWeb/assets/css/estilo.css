@@ -1,4 +1,22 @@
+/* ♦ MENU ♦*/
+#menu li{
+    display: inline;
+    padding: 10px;
+}
+#menu li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+#menu li a:hover{
+    color: red;
+}
+
 /*Estilo da página Index*/
+
+.center{
+    text-align: center;
+}
 
 .container{
     display: flex;
@@ -7,5 +25,12 @@
     align-items: center;
 }
 
+.p-30{
+padding: 30px;
+}
+
+.br-20{
+    border-radius: 20%;
+}
 
 /*Estilo da página Contato*/
