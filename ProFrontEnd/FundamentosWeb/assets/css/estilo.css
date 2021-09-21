@@ -1,11 +1,17 @@
+
 /* ♦ MENU ♦*/
+#menu{
+    background-color: #08192b;
+    
+}
+
 #menu li{
     display: inline;
     padding: 10px;
 }
 #menu li a{
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 20px;
 }
 #menu li a:hover{
@@ -20,11 +26,10 @@
 
 .container{
     display: flex;
-    flex-flow: row-reverse;
-    justify-content: center;
+    flex-flow: row;
+    justify-content:center;
     align-items: center;
 }
-
 .p-30{
 padding: 30px;
 }
@@ -33,4 +38,33 @@ padding: 30px;
     border-radius: 20%;
 }
 
+.border{
+    border: solid 1px black;
+}
 /*Estilo da página Contato*/
+
+/*Footer*/
+footer{
+    background-color:#08192b;
+    color: white;
+}
+
+
+.tm-social{
+    width: 55px;
+    height: 55px;
+}
+
+/*Margin Bootom*/
+.mb-50{
+    margin-bottom: 50px;
+}
+
+.ml-50{
+    margin-left: 50px;
+}
+
+/*text*/
+.justify{
+    text-align: justify;
+}
