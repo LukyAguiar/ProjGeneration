@@ -203,39 +203,42 @@
                             <!-- Footer -->
             <footer class="mt-5 text-center text-white" style="background-color: #006494;">
                 <!-- Grid container -->
-                <div class="container-fluid p-5">
+                <div class="container-fluid p-5 ">
                 <!-- Section: Social media -->
-                <section class="mb-4">
+                <section class="mb-4 ">
+
+                  <div class="d-flex justify-content-center ">  
                     <!-- Facebook -->
                     <a class="btn m-1" href="#!" role="button">
-                        <img src="assets/img/md/facebook.png" alt="Facebook" width="55px" height="55px">
+                        <img src="assets/img/md/facebook.png" alt="Facebook"  width="45px" height="45px">
                     </a>
             
                     <!-- Twitter -->
                     <a class="btn btn-floating m-1" href="#!" role="button">
-                        <img src="assets/img/md/twitter.png" alt="Twitter"  width="55px" height="55px">
+                        <img src="assets/img/md/twitter.png" alt="Twitter"   width="45px" height="45px">
                     </a>
             
                     <!-- Google -->
                     <a class="btn  btn-floating m-1" href="#!" role="button">
-                        <img src="assets/img/md/google-plus.png" alt="Google"  width="55px" height="55px">
+                        <img src="assets/img/md/google-plus.png" alt="Google"  width="45px" height="45px">
                     </a>
             
                     <!-- trello -->
                     <a class="btn btn-floating m-1" href="#!" role="button">
-                        <img src="assets/img/md/trello.png" alt="Trello"  width="55px" height="55px">
+                        <img src="assets/img/md/trello.png" alt="Trello"   width="45px" height="45px">
                     </a>
             
                     <!-- Linkedin -->
                     <a class="btn btn-floating m-1" href="#!" role="button">
-                        <img src="assets/img/md/linkedin.png" alt="Trello"  width="55px" height="55px">
+                        <img src="assets/img/md/linkedin.png" alt="Trello"   width="45px" height="45px">
                     </a>
             
                     <!-- Github -->
                     <a class="btn btn-floating m-1" href="#!" role="button">
-                        <img src="assets/img/md/youtube.png" alt="Trello"  width="55px" height="55px">
+                        <img src="assets/img/md/youtube.png" alt="Trello"  width="45px" height="45px">
                     </a>
-
+                </div>
+                
                 </section>
                 <!-- Section: Social media -->
             
@@ -244,44 +247,59 @@
                     <form action="">
                     <!--Grid row-->
                     <div class="row d-flex justify-content-center mb-2">
-
-                        <div class="col-2">
+                        
+                        <div class="col-1">
+                            <!--Métrica-->   
+                            <div>
+                                 <label for="staticEmail" class="col-sm-2 col-form-label">Nome</label>     
+                             </div>        
+                             <div>
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                              </div>
+                        </div>
+                  
+                    
+                        <div class="col-3">
                             <!-- Nome -->
                             <div class="form-group mb-2">
-                                <label for="staticEmail2" class="sr-only">Email</label>
-                                <input type="text" readonly class="form-control" id="nome" placeholder="Digite seu Nome ♥" >
+                                <input type="text" readonly class="form-control" id="nome" placeholder="Digite seu Nome ♥" required>
                             </div>
-                        </div>
 
-                        <!--Grid column-->
-                        <div class="col-2">
                             <div class="form-group mb-2">
-                                <label for="staticEmail2" class="sr-only">Email</label>
                                 <input type="email" readonly class="form-control" id="email" placeholder="email@exemplo.com">
-                              </div>
+                            </div>
 
                         </div>
+
                         <!--Grid column-->
-            
-                        <!--Grid column-->
-                        <div class="col-md-5 col-2">
-                            <!--Criticas -->                
-                                <div class="form-group mb-2">
-                                  <label for="inputPassword2" class="sr-only"></label>
-                                  <input type="password" class="form-control" id="assunto" placeholder="Assunto">
-                                </div>
+                        <div class="col-5">
+                           
+                            <div class="form-group mb-2">
+                                <label for="inputPassword2" class="sr-only">Assunto</label>
+                                <textarea class="form-control" id="assunto" rows="3" placeholder="♦ Assunto ♦ - Máximo 100 Caracteres"></textarea>
+                             </div>
+
+                             
                         </div>
                         <!--Grid column-->
             
                         <!--Grid column-->
+                        <div class="col-1">
+                            <!--Metricas -->                
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-auto">
-                        <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary mb-2">
-                            Enviar
-                        </button>
 
                         </div>
-                        <!--Grid column-->
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-outline-success mb-2">
+                                <b>Enviar</b>
+                            </button>
+                        </div>
+                        <div class="col-auto">
+
+                        </div>
                     </div>
                     <!--Grid row-->
                     </form>
@@ -289,10 +307,10 @@
                 <!-- Section: Form -->
             
                 <!-- Section: Text -->
-                <section class="mb-4">
+                <section class="mb-4 mt-5">
                     <p>
                         “A criação bem-sucedida de inteligência artificial seria o maior evento na história da humanidade. Infelizmente, pode também ser o último, a menos que aprendamos a evitar os riscos”
-                        <br><b>Stephen Hawking, físico teórico</b>
+                        <br><b>Stephen Hawking | Físico teórico</b>
                     </p>
                 </section>
                 <!-- Section: Text -->
