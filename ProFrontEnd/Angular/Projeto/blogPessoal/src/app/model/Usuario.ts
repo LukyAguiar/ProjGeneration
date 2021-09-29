@@ -1,4 +1,3 @@
-import { StringMap } from "@angular/compiler/src/compiler_facade_interface"
 
 //Criando a Classe Usuario -
 export class Usuario{
