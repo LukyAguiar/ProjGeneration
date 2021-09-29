@@ -1,3 +1,5 @@
+import { Postagem } from "./Postagem"
+import { Tema } from "./Tema"
 
 //Criando a Classe Usuario -
 export class Usuario{
@@ -7,4 +9,6 @@ export class Usuario{
     public senha: string
     public foto: string
     public tipo: string
+    public postagem:Postagem[]
+    public tema:Tema
 }
