@@ -64,8 +64,14 @@ public class UsuarioService {
 				String authHeader = "Basic " + new String (encodeAuth);
 				
 				user.get().setToken(authHeader);
+				//Pegando o Nome do Usuário
 				user.get().setNome(usuario.get().getNome());
+				//Pegando a Senha do Usuário
 				user.get().setSenha(usuario.get().getSenha());
+				//Pegando a Foto do Usuário
+				user.get().setFoto(usuario.get().getFoto());
+				//Pegando o Tipo do Usuário (Adm ou Normal)
+				user.get().setTipo(usuario.get().getTipo());
 				
 				return user;
 			}
