@@ -37,6 +37,8 @@ export class TemaComponent implements OnInit {
       this.findAllTemas()
       this.tema = new Tema()
     })
-   
+
   }
+
+  
 }
