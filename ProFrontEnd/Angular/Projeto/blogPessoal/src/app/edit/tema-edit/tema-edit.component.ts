@@ -33,5 +33,6 @@ export class TemaEditComponent implements OnInit {
 
   atualizar(){
     
+    
   }
 }
