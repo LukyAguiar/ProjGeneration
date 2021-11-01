@@ -2,12 +2,11 @@ package org.generation.blogPessoal.model;
 
 import java.util.Date;
 
-
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -28,12 +27,12 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@NotBlank(message = "O atributo Titulo não pode ficar vazio ou nulo.")
-	@Size(max = 50, message = "O atributo Titulo permite até 50 caracteres.")
+	@NotNull
+	@Size(min = 5, max = 100)
 	private String titulo;
 	
-	@NotBlank(message = "O atributo Titulo não pode ficar vazio ou nulo.")
-	@Size(max = 255, message = "O atributo Texto permite no máximo 255 caracteres.")
+	@NotNull
+	@Size(min =5, max = 100)
 	private String texto; 
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -44,9 +43,8 @@ public class Postagem {
 	private Tema tema;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("postagem")
+	@JsonIgnoreProperties("usuario")
 	private Usuario usuario;
-	
 	
 	//Getters and Setters 
 	public long getId() {
@@ -85,4 +83,5 @@ public class Postagem {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+	
 }
